@@ -50,7 +50,7 @@ export const resDate = () => {
         }
     }
     return (
-        `${currentDate.year}${currentMonth(month)}${currentDay(day)}${currentHours(hours)}${currentMinutes(minutes)}${currentSeconds(seconds)}`
+        `${currentDate.year}${currentMonth(month)}${currentDay(day)}${currentHours(hours) - 1}${currentMinutes(minutes)}${currentSeconds(seconds)}`
     )
 }
 

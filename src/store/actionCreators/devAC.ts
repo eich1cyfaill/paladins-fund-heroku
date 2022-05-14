@@ -14,8 +14,8 @@ export const createSession = () => {
     return async (dispatch: Dispatch<DevAction>) => {
         try{
             dispatch({type: devActionTypes.CHANGE_SIGNATURE, payload: signature(signatureDI, signatureMethod, signatureAPI, resDate())})
+            debugger
             const response = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.paladins.com/paladinsapi.svc/createsessionJson/${devID}/${signature(signatureDI, "createsession", signatureAPI, resDate())}/${resDate()}`)
-
             dispatch({type: devActionTypes.CHANGE_SESSION_ID, payload: response.data.session_id})
         } catch(e) {
             console.error('Error to Creating Session')
@@ -28,7 +28,6 @@ export const DevGetPlayer = (sessionID: string) => {
     return async (dispatch: Dispatch<DevAction>) => {
         try {
             const response = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.paladins.com/paladinsapi.svc/getplayerjson/${devID}/${signature(signatureDI, "getplayer", signatureAPI, resDate())}/${sessionID}/${resDate()}/YaNeZnalShoEi14`)
-
         } catch (e) {
             console.error('Error to Get Player')
         }
