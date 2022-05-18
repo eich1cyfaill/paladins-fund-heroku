@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ff4c55fd.css",
+    "main.js": "/static/js/main.36935dee.js",
+    "static/media/atlas.png": "/static/media/atlas.ff53e0260b0fd69c8dbf.png",
+    "static/media/andro.jpg": "/static/media/andro.4855da4564df05d12dce.jpg",
+    "index.html": "/index.html",
+    "main.ff4c55fd.css.map": "/static/css/main.ff4c55fd.css.map",
+    "main.36935dee.js.map": "/static/js/main.36935dee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff4c55fd.css",
+    "static/js/main.36935dee.js"
+  ]
+}
