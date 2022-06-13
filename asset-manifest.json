@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.605e325d.css",
-    "main.js": "/static/js/main.8112e4ce.js",
-    "static/media/atlas.png": "/static/media/atlas.ff53e0260b0fd69c8dbf.png",
-    "static/media/andro.jpg": "/static/media/andro.4855da4564df05d12dce.jpg",
-    "index.html": "/index.html",
-    "main.605e325d.css.map": "/static/css/main.605e325d.css.map",
-    "main.8112e4ce.js.map": "/static/js/main.8112e4ce.js.map"
+    "main.css": "/paladins-fund-heroku/static/css/main.605e325d.css",
+    "main.js": "/paladins-fund-heroku/static/js/main.4f11ff5e.js",
+    "static/media/atlas.png": "/paladins-fund-heroku/static/media/atlas.ff53e0260b0fd69c8dbf.png",
+    "static/media/andro.jpg": "/paladins-fund-heroku/static/media/andro.4855da4564df05d12dce.jpg",
+    "index.html": "/paladins-fund-heroku/index.html",
+    "main.605e325d.css.map": "/paladins-fund-heroku/static/css/main.605e325d.css.map",
+    "main.4f11ff5e.js.map": "/paladins-fund-heroku/static/js/main.4f11ff5e.js.map"
   },
   "entrypoints": [
     "static/css/main.605e325d.css",
-    "static/js/main.8112e4ce.js"
+    "static/js/main.4f11ff5e.js"
   ]
 }
