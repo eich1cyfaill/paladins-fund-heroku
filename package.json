@@ -2,6 +2,7 @@
   "name": "react-paladins-fund-ts",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://eich1cyfaill.github.io/paladins-fund-heroku/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
