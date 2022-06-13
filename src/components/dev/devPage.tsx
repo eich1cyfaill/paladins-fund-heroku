@@ -9,7 +9,7 @@ const DevPage = () => {
 
     const {sessionID, signature} = useTypeSelector(state => state.devReducer)
 
-    const {createSession, DevGetTopMatches, DevGetLeagueLeaderboard, DevGetLeagueSeasons, DevGetMotD, DevGetPlayer, DevGetDataUsage, DevGetChampionRanks, DevGetMatchHistory, DevGetMatchPlayerDetails, DevGetMatchDetails, DevGetMatchDetailsBatch} = useActions()
+    const {createSession, DevGetTopMatches, DevGetLeagueLeaderboard, DevGetLeagueSeasons, DevGetMotD, DevGetPlayer, DevGetDataUsage, DevGetChampionRanks, DevGetMatchHistory, DevGetMatchPlayerDetails, DevGetMatchDetails, DevGetMatchDetailsBatch, DevGetReplitTest} = useActions()
 
 
     return (
@@ -26,6 +26,7 @@ const DevPage = () => {
             <PfButton onClick={() => DevGetLeagueSeasons(sessionID)}>GetDevLeagueSeasons</PfButton>
             <PfButton onClick={() => DevGetLeagueLeaderboard(sessionID)}>DevGetLeagueLeaderboard</PfButton>
             <PfButton onClick={() => DevGetTopMatches(sessionID)}>DevGetTopMatches</PfButton>
+            <PfButton onClick={() => DevGetReplitTest()}>DevGetReplitTest</PfButton>
         </div>
     );
 };

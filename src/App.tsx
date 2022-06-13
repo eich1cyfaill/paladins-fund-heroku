@@ -38,7 +38,6 @@ const App: React.FC = () => {
                   </Routes>
               </div>
           </div>
-          <Footer />
       </div>
 
   );

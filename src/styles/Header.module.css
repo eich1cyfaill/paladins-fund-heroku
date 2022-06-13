@@ -3,13 +3,9 @@
     font-family: Leelawadee;
     cursor: pointer;
     height: 7vh;
-
+    display: flex;
+    justify-content: space-around;
 }
-
-.header {
-
-}
-
 
 .header__menu {
     height: 7vh;
@@ -35,10 +31,14 @@
     margin-left: 2vw;
 }
 .header_itemlist {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
     width: 70vw;
     align-items: center;
+}
+
+.header_itemlist a {
+    width: 100%
 }
 
 .header_itemlist__item{
@@ -48,6 +48,7 @@
     text-align: center;
     padding-top: 2.5vh;
     height: 7vh;
+    width: 100%;
 }
 
 .header_itemlist__item:hover {
@@ -57,7 +58,7 @@
 
 @media screen and (max-width: 425px){
     .header__title_wrapper{
-        visibility: hidden;
+        display: none;
     }
     .header__menu{
         visibility: visible;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {useParams, useNavigate} from "react-router-dom";
 import cl from '../../styles/PlayerInfo.module.sass'
 import { useTypeSelector } from '../../hooks/useTypeSelector';
@@ -6,7 +6,6 @@ import { useActions } from '../../hooks/useActions';
 import PfLoader from '../../userinterface/Loader/pfLoader';
 import { rankInterpretate, IRankInterpretate } from '../../lib/rankInterpretate';
 import { getWinrateStats } from '../../lib/totalWinrateFractions';
-import PfButton from '../../userinterface/button/pfButton';
 import { getChampionAvatar } from '../../lib/getChampionAvatar'
 
 
@@ -51,12 +50,16 @@ const PlayerInfo: React.FC = () => {
     }, [elementChampionRef, selectedChampionBest])
 
 
-    useEffect(() => {
-        acGetPlayer(params.playerName, sessionID)
-        acGetPlayerChampionRanks(params.playerName, sessionID)
-        acGetPlayerStatus(params.playerName, sessionID)
-        acGetMatchHistory(params.playerName, sessionID)
+    let fetchingBunch = async () => {
+        await acGetPlayer(params.playerName, sessionID)
+        await acGetPlayerChampionRanks(params.playerName, sessionID)
+        await acGetPlayerStatus(params.playerName, sessionID)
+        await acGetMatchHistory(params.playerName, sessionID)
+    }
 
+
+    useEffect(() => {
+        fetchingBunch()
         return () => {
             playerInfoUnmountPlayerNotFound()
         }

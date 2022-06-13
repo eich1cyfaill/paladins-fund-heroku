@@ -4,8 +4,6 @@ import axios from "axios"
 import { devID, AuthKey } from "../../DAL/indexAPI"
 import { signatureDI, signatureMethod, signatureAPI, signature } from "../../lib/signature"
 import { resDate } from '../../lib/date'
-import md5 from "blueimp-md5"
-import { useTypeSelector } from "../../hooks/useTypeSelector"
 
 
 
@@ -14,7 +12,7 @@ export const createSession = () => {
     return async (dispatch: Dispatch<DevAction>) => {
         try{
             dispatch({type: devActionTypes.CHANGE_SIGNATURE, payload: signature(signatureDI, signatureMethod, signatureAPI, resDate())})
-            const response = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.paladins.com/paladinsapi.svc/createsessionJson/${devID}/${signature(signatureDI, "createsession", signatureAPI, resDate())}/${resDate()}`)
+            const response = await axios.get(`https://PaladinsPlayerFund.eich1cyfaill.repl.co/createsession?signature=${signature(signatureDI, "createsession", signatureAPI, resDate())}&resDate=${resDate()}`)
             dispatch({type: devActionTypes.CHANGE_SESSION_ID, payload: response.data.session_id})
         } catch(e) {
             console.error('Error to Creating Session')
@@ -26,7 +24,7 @@ export const createSession = () => {
 export const DevGetPlayer = (sessionID: string) => {
     return async (dispatch: Dispatch<DevAction>) => {
         try {
-            const response = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.paladins.com/paladinsapi.svc/getplayerjson/${devID}/${signature(signatureDI, "getplayer", signatureAPI, resDate())}/${sessionID}/${resDate()}/YaNeZnalShoEi14`)
+            const response = await axios.get(`https://PaladinsPlayerFund.eich1cyfaill.repl.co/getplayer?signature=${signature(signatureDI, "getplayer", signatureAPI, resDate())}&si=${sessionID}&resDate=${resDate()}&name=YaNeZnalShoEi14`)
         } catch (e) {
             console.error('Error to Get Player')
         }
@@ -107,6 +105,13 @@ export const DevGetLeagueLeaderboard = (sessionID: string) => {
 export const DevGetTopMatches = (sessionID: string) => {
     return async(dispatch: Dispatch<DevAction>) => {
         const response = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.paladins.com/paladinsapi.svc/gettopmatchesjson/${devID}/${signature(signatureDI, "gettopmatches", signatureAPI, resDate())}/${sessionID}/${resDate()}`)
+        console.log(response)
+    }
+}
+
+export const DevGetReplitTest = () => {
+    return async(dispatch: Dispatch<DevAction>) => {
+        const response = await axios.get('https://PaladinsPlayerFund.eich1cyfaill.repl.co/test')
         console.log(response)
     }
 }
